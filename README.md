@@ -35,7 +35,7 @@
 - **Ổ cứng**: 10GB trống
 
 ### Phần mềm
-- **OS**: Windows 10/11, Linux (Ubuntu 18.04+), macOS
+- **OS**: Windows 10\11, Linux (Ubuntu 18.04+), macOS
 - **Python**: 3.8 trở lên
 - **CUDA**: 11.0+ (nếu sử dụng GPU)
 
@@ -46,7 +46,7 @@
 ```bash
 # Tạo virtual environment (khuyến nghị)
 python -m venv vehicle_counting_env
-source vehicle_counting_env/bin/activate  # Linux/macOS
+source vehicle_counting_env\bin\activate  # Linux\macOS
 # hoặc
 vehicle_counting_env\Scripts\activate     # Windows
 
@@ -58,10 +58,10 @@ pip install --upgrade pip
 
 ```bash
 # Cho GPU với CUDA 11.8
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install torch torchvision torchaudio --index-url https:\\download.pytorch.org\whl\cu118
 
 # Cho CPU only (nếu không có GPU)
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+pip install torch torchvision torchaudio --index-url https:\\download.pytorch.org\whl\cpu
 ```
 
 ### Bước 3: Cài đặt các thư viện cần thiết
@@ -84,7 +84,7 @@ pip install numpy pandas matplotlib seaborn
 
 ```bash
 # Clone YOLOv5 repository (nếu chưa có)
-git clone https://github.com/ultralytics/yolov5
+git clone https:\\github.com\ultralytics\yolov5
 cd yolov5
 pip install -r requirements.txt
 ```
@@ -92,36 +92,37 @@ pip install -r requirements.txt
 ## Cấu trúc dự án
 
 ```
-DACK_NMXLAS/
+DACK_NMXLAS\
 ├── main.py                # File chính chạy hệ thống đếm xe
 ├── NKKN-VoThiSau.mp4      # Video đầu vào
 ├── train.py               # Script training (nếu cần)
 ├── custom_data.yaml       # File cấu hình dữ liệu (nếu có)
-├── runs/                  # Kết quả training, inference (weights, hình ảnh, thống kê...)
-│   └── detect/
-│       └── train/
+├── runs\                  # Kết quả training, inference (weights, hình ảnh, thống kê...)
+│   └── detect\
+│       └── train\
 │           ├── ...        # Các file kết quả, hình ảnh, thống kê
-│           └── weights/
+│           └── weights\
 │               ├── best.pt
 │               └── last.pt
-├── train_data/            # Dữ liệu training/validation/test
-    ├── images/            # Ảnh gốc
-    │   ├── train/         # Ảnh training
-    │   ├── val/           # Ảnh validation
-    │   └── test/          # Ảnh test
-    └── labels/            # Nhãn tương ứng
-        ├── train/         # Nhãn training
-        ├── val/           # Nhãn validation
-        ├── test/          # Nhãn test
+├── train_data\            # Dữ liệu training\validation\test
+    ├── images\            # Ảnh gốc
+    │   ├── train\         # Ảnh training
+    │   ├── val\           # Ảnh validation
+    │   └── test\          # Ảnh test
+    └── labels\            # Nhãn tương ứng
+        ├── train\         # Nhãn training
+        ├── val\           # Nhãn validation
+        ├── test\          # Nhãn test
         ├── *.cache*       # File cache tăng tốc
 ```
 
 ## Dữ liệu training
 
 ### Thống kê dataset
-- **Tổng số ảnh**: 144 ảnh
-- **Training set**: 105 ảnh (70%)
-- **Validation set**: 45 ảnh (30%)
+- **Tổng số ảnh**: 1000 ảnh
+- **Training set**: 700 ảnh (70%)
+- **Validation set**: 200 ảnh (20%)
+- **Test**: 100 (10%)
 - **Classes**: 4 loại phương tiện (bus, car, motorbike, truck)
 
 ### Nguồn dữ liệu
@@ -138,11 +139,11 @@ DACK_NMXLAS/
    - Hoặc thay đổi đường dẫn trong `main.py`:
 
 ```python
-video_path = "path/to/your/video.mp4"
+video_path = "path\to\your\video.mp4"
 ```
 
 2. **Kiểm tra model**:
-   - Đảm bảo file `best.pt` có trong đường dẫn: `yolov5/runs/train/exp/weights/best.pt`
+   - Đảm bảo file `best.pt` có trong đường dẫn: `runs\detect\train\weights\best.pt`
    - Model đã được train với 3 classes: bus, car, motorbike
 
 ### Bước 2: Chạy hệ thống
@@ -157,8 +158,8 @@ Trong file `main.py`, bạn có thể điều chỉnh các tham số sau:
 
 ```python
 # Đường dẫn đến model và video
-model_path = r"D:\Hoc_Tap\HK243\NM_XLAS\DACK_NMXLAS\yolov5\runs\train\exp\weights\best.pt"
-video_path = r"D:\Hoc_Tap\HK243\NM_XLAS\DACK_NMXLAS\NKKN-VoThiSau.mp4"
+model_path = r"C:\Users\T.Hung\Desktop\DACK_NMXLAS\runs\detect\train\weights\best.pt"
+video_path = r"C:\Users\T.Hung\Desktop\DACK_NMXLAS\NKKN-VoThiSau.mp4"
 output_path = "output.mp4"
 
 # Danh sách class names (không thay đổi nếu dùng model đã train)
@@ -179,7 +180,7 @@ max_age = 30  # Số frame tối đa để track một đối tượng
 ### 1. Phát hiện đối tượng (YOLOv5)
 ```python
 # Tải model YOLOv5 đã train
-model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path)
+model = yolov5su(model_path)
 
 # Phát hiện đối tượng trong frame
 results = model(frame)
@@ -211,8 +212,8 @@ if intersect(prev_center, center, count_line[0], count_line[1]):
 
 **Tạo file config** `data.yaml`:
 ```yaml
-train: train_data/images/train
-val: train_data/images/val
+train: train_data\images\train
+val: train_data\images\val
 nc: 4
 names: ['bus', 'car', 'motorbike','truck']
 ```
@@ -223,20 +224,20 @@ names: ['bus', 'car', 'motorbike','truck']
 cd yolov5
 
 # Training với model pretrained
-python train.py --data ../data.yaml --weights yolov5s.pt --epochs 100 --batch-size 16 --img 640
+python train.py --data ..\data.yaml --weights yolov5s.pt --epochs 100 --batch-size 16 --img 640
 
 # Training từ scratch (nếu cần)
-python train.py --data ../data.yaml --weights '' --epochs 100 --batch-size 16 --img 640
+python train.py --data ..\data.yaml --weights '' --epochs 100 --batch-size 16 --img 640
 ```
 
 ### Bước 3: Đánh giá model
 
 ```bash
 # Validation
-python val.py --data ../data.yaml --weights runs/train/exp/weights/best.pt
+python val.py --data ..\data.yaml --weights runs\train\exp\weights\best.pt
 
 # Inference test
-python detect.py --source ../NKKN-VoThiSau.mp4 --weights runs/train/exp/weights/best.pt
+python detect.py --source ..\NKKN-VoThiSau.mp4 --weights runs\train\exp\weights\best.pt
 ```
 
 ## Kết quả và Output
@@ -251,10 +252,10 @@ python detect.py --source ../NKKN-VoThiSau.mp4 --weights runs/train/exp/weights/
 #### 1. Model không load được
 ```bash
 # Kiểm tra đường dẫn
-ls yolov5/runs/train/exp/weights/best.pt
+ls runs\detect\train\weights\best.pt
 
 # Kiểm tra quyền truy cập file
-chmod 644 yolov5/runs/train/exp/weights/best.pt
+chmod 644 runs\detect\train\weights\best.pt
 ```
 
 #### 2. Video không đọc được
@@ -335,11 +336,11 @@ Dự án này được phát triển cho mục đích học tập và là đồ 
 
 ## Tài liệu tham khảo
 
-- [YOLOv5 Documentation](https://docs.ultralytics.com/)
-- [DeepSORT Paper](https://arxiv.org/abs/1703.07402)
-- [OpenCV Documentation](https://docs.opencv.org/)
-- [PyTorch Tutorials](https://pytorch.org/tutorials/)
-- [Huấn luyện YOLOv5 trên dữ liệu tùy chỉnh](https://docs.ultralytics.com/vi/yolov5/tutorials/train_custom_data/)
-- [Yolov5AnimalCamera- KhuongDuy25](https://github.com/KhuongDuy25/Yolov5AnimalCamera/tree/main)
+- [YOLOv5 Documentation](https:\\docs.ultralytics.com\)
+- [DeepSORT Paper](https:\\arxiv.org\abs\1703.07402)
+- [OpenCV Documentation](https:\\docs.opencv.org\)
+- [PyTorch Tutorials](https:\\pytorch.org\tutorials\)
+- [Huấn luyện YOLOv5 trên dữ liệu tùy chỉnh](https:\\docs.ultralytics.com\vi\yolov5\tutorials\train_custom_data\)
+- [Yolov5AnimalCamera- KhuongDuy25](https:\\github.com\KhuongDuy25\Yolov5AnimalCamera\tree\main)
 
 
