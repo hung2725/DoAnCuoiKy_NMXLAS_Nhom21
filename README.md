@@ -142,7 +142,7 @@ video_path = "path\to\your\video.mp4"
 
 2. **Kiểm tra model**:
    - Đảm bảo file `best.pt` có trong đường dẫn: `runs\detect\train\weights\best.pt`
-   - Model đã được train với 3 classes: bus, car, motorbike
+   - Model đã được train với 4 classes: bus, car, motorbike, truck
 
 ### Bước 2: Chạy hệ thống
 
