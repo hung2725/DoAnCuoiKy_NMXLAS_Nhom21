@@ -246,13 +246,11 @@ python detect.py --source ../NKKN-VoThiSau.mp4 --weights runs/train/exp/weights/
 
 ### Video output
 - **File**: `output.mp4`
-- **Format**: MP4 với codec H.264
 - **Nội dung**: 
   - Bounding box cho từng đối tượng
   - ID tracking
-  - Vạch đếm màu đỏ
+  - Vạch đếm hồng
   - Counter real-time ở góc phải
-
 #### 1. Model không load được
 ```bash
 # Kiểm tra đường dẫn
@@ -303,18 +301,11 @@ frame = cv2.resize(frame, (int(w*scale_factor), int(h*scale_factor)))
 ```
 
 ## Đánh giá hiệu suất
-
-### Metrics quan trọng
-- **FPS**: Frames per second (khuyến nghị >15 FPS)
-- **Accuracy**: Độ chính xác đếm
-- **Precision**: Tỷ lệ đếm đúng / tổng số đếm
-- **Recall**: Tỷ lệ đếm được / tổng số đối tượng thực tế
-
 ### Benchmark
 - **Hardware**: NVIDIA RTX 4050
 - **Video**: 1920x1080, 30 FPS
 - **Performance**: ~20 FPS với độ chính xác >75%
-
+- Đếm số lượng còn một chút sai sót vì mô hình không nhận diện được hoặc bị che mất 
 ## Mở rộng và cải tiến trong tương lai
 
 ### 1. Thêm classes mới
