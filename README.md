@@ -301,7 +301,14 @@ frame = cv2.resize(frame, (int(w*scale_factor), int(h*scale_factor)))
 - **Hardware**: NVIDIA RTX 4050
 - **Video**: 1920x1080, 30 FPS
 - **Performance**: ~20 FPS với độ chính xác >75%
-- Đếm số lượng còn một chút sai sót vì mô hình không nhận diện được hoặc bị che mất 
+  <img width="1344" height="1344" alt="image" src="https://github.com/user-attachments/assets/a9b84d4f-734a-44e9-9930-b23037017486" />
+- Đếm số lượng còn một chút sai sót vì mô hình không nhận diện được hoặc bị che mất
+
+<img width="2400" height="1200" alt="image" src="https://github.com/user-attachments/assets/b8927812-7ae7-464c-84ff-4c47824936a5" />
+- Độ chính xác mô hình (mAP@0.5): ~90%
+- Độ chính xác toàn diện (mAP@0.5:0.95): ~75%
+- Precision: ~88%
+- Recall: ~83%
 ## Mở rộng và cải tiến trong tương lai
 
 ### 1. Thêm classes mới
