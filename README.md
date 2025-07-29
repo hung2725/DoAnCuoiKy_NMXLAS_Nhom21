@@ -105,15 +105,15 @@ DACK_NMXLAS/
 │               ├── best.pt
 │               └── last.pt
 ├── train_data/            # Dữ liệu training/validation/test
-│   ├── images/            # Ảnh gốc
-│   │   ├── train/         # Ảnh training
-│   │   ├── val/           # Ảnh validation
-│   │   └── test/          # Ảnh test
-│   └── labels/            # Nhãn tương ứng
-│       ├── train/         # Nhãn training
-│       ├── val/           # Nhãn validation
-│       ├── test/          # Nhãn test
-│       ├── *.cache*       # File cache tăng tốc
+    ├── images/            # Ảnh gốc
+    │   ├── train/         # Ảnh training
+    │   ├── val/           # Ảnh validation
+    │   └── test/          # Ảnh test
+    └── labels/            # Nhãn tương ứng
+        ├── train/         # Nhãn training
+        ├── val/           # Nhãn validation
+        ├── test/          # Nhãn test
+        ├── *.cache*       # File cache tăng tốc
 ```
 
 ## Dữ liệu training
