@@ -95,9 +95,7 @@ pip install -r requirements.txt
 DACK_NMXLAS/
 ├── main.py                # File chính chạy hệ thống đếm xe
 ├── NKKN-VoThiSau.mp4      # Video đầu vào
-├── yolo11n.pt             # Model YOLO (nếu có)
 ├── train.py               # Script training (nếu cần)
-├── sample_data.ipynb      # Notebook phân tích dữ liệu mẫu
 ├── custom_data.yaml       # File cấu hình dữ liệu (nếu có)
 ├── runs/                  # Kết quả training, inference (weights, hình ảnh, thống kê...)
 │   └── detect/
@@ -116,7 +114,6 @@ DACK_NMXLAS/
 │       ├── val/           # Nhãn validation
 │       ├── test/          # Nhãn test
 │       ├── *.cache*       # File cache tăng tốc
-├── yolov5su.pt
 ```
 
 ## Dữ liệu training
