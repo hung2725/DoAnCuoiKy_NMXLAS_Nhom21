@@ -1,7 +1,5 @@
 # Môn Học: Nhập Môn Xử Lý Ảnh Số
 ## Đếm Phương Tiện Giao Thông - Vehicle Counting
-
-## XÁC ĐỊNH ĐỐI TƯỢNG TRONG ẢNH HOẶC VIDEO
 - **Sinh Viên Thực Hiên:** Phạm Thế Hùng, Nguyễn Chí Dũng, Đoàn Hoàng Quân, Phan Trần Quang Thái 
 - **Môn Học:** Nhập Môn Xử Lý Ảnh Số
 - **Giảng viên:** TS.Đỗ Hữu Quân
