@@ -305,6 +305,7 @@ frame = cv2.resize(frame, (int(w*scale_factor), int(h*scale_factor)))
 - Đếm số lượng còn một chút sai sót vì mô hình không nhận diện được hoặc bị che mất
 
 <img width="2400" height="1200" alt="image" src="https://github.com/user-attachments/assets/b8927812-7ae7-464c-84ff-4c47824936a5" />
+
 - Độ chính xác mô hình (mAP@0.5): ~90%
 - Độ chính xác toàn diện (mAP@0.5:0.95): ~75%
 - Precision: ~88%
